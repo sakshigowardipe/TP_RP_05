@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<title>Temperature Converter</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7f7f7;
+  }
+  .converter {
+    text-align: center;
+    padding: 20px;
+    background: #bfceda;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  input, button {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: calc(100% - 22px);
+  }
+  button {
+    cursor: pointer;
+    background-color: #3b5d3b;
+    color: rgb(250, 245, 245);
+  }
+  button:hover {
+    background-color: #129f12;
+  }
+</style>
+</head>
+<body>
+<div class="converter">
+  <h2>Temperature Converter</h2>
+  <input type="number" id="celsius" placeholder="Celsius">
+  <button onclick="convertToCelsius()">Convert to Celsius</button>
+  <input type="number" id="fahrenheit" placeholder="Fahrenheit">
+  <button onclick="convertToFahrenheit()">Convert to Fahrenheit</button>
+</div>
+
+<script>
+function convertToCelsius(celsius) {
+    var farhenite = document.getElementById('celsius').value
+    var celsius = (farhenite - 32) *5/9;
+
+ // var fahrenheit = document.getElementById('fahrenheit').value;
+ // var celsius = (fahrenheit - 32) * 5/9;
+  document.getElementById('celsius').value = celsius.toFixed(2);
+}
+
+function convertToFahrenheit(fahrenheit) {
+  var celsius = document.getElementById('fahrenheit').value
+  var fahrenheit =(celsius * 9/5) + 32;
+ // var celsius = document.getElementById('celsius').value;
+  //var fahrenheit = (celsius * 9/5) + 32;
+  document.getElementById('fahrenheit').value = fahrenheit.toFixed(2);
+}
+</script>
+</body>
+</html>
